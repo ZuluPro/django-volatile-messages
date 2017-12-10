@@ -1,7 +1,7 @@
 # .coveragerc to control coverage.py
 [run]
 branch = True
-source = favicon
+source = volatile_messages
 omit =
     volatile_messages/tests/*
     volatile_messages/apps.py

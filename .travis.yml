@@ -5,8 +5,6 @@ python:
   - "3.4"
   - "3.5"
   - "3.6"
-  - "pypy"
-  - "pypy3"
 
 env:
   matrix:
@@ -14,7 +12,8 @@ env:
     - DJANGO=1.9
     - DJANGO=1.10
     - DJANGO=1.11
-    - DJANGO=mastert
+    - DJANGO=2.0
+    - DJANGO=master
 
 install:
   - TOX_ENV=py${TRAVIS_PYTHON_VERSION}-django${DJANGO}
@@ -29,6 +28,16 @@ after_success:
   - tox -e $TOX_ENV -- coveralls $COVERALLS_OPTION
 
 matrix:
-  exclude:
+  allow_failures:
     - python: "pypy3"
-      env: DJANGO=1.9
+    - env: DJANGO="2.0
+    - env: DJANGO="master"
+  exclude:
+    - python: "2.7"
+      env: DJANGO=2.0
+    - python: "2.7"
+      env: DJANGO=master
+    - python: "3.4"
+      env: DJANGO=2.0
+    - python: "3.4"
+      env: DJANGO=master

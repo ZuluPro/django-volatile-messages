@@ -1,4 +1,4 @@
-recursive-include favicon * *.css *.html *.xml
+recursive-include volatile_messages * *.css *.html *.xml
 include requirements*.txt
 
 global-exclude *.pyc *.pyo

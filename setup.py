@@ -23,7 +23,7 @@ setup(
     packages=find_packages(exclude=[]),
     include_package_data=True,
     test_suite='runtests.main',
-    # tests_require=read_file('requirements-tests.txt'),
+    tests_require=read_file('requirements-tests.txt'),
     classifiers=[
         'Development Status :: 4 - Beta',
         'Environment :: Web Environment',
